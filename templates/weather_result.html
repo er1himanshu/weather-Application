@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Result</title>
+    <style>
+        /* Add your CSS styles here */
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .detail {
+            background-color: #fff;
+            border-radius: 4px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .detail p {
+            margin: 5px 0;
+        }
+        .detail h2 {
+            margin-bottom: 10px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Weather Result</h1>
+        <div class="detail">
+            <h2>Location</h2>
+            <p>City: {{ data['name'] }}, {{ data['sys']['country'] }}</p>
+            <p>Latitude: {{ data['coord']['lat'] }}</p>
+            <p>Longitude: {{ data['coord']['lon'] }}</p>
+        </div>
+        <div class="detail">
+            <h2>Weather</h2>
+            <p>Description: {{ data['weather'][0]['description'] }}</p>
+            <p>Temperature: {{ data['main']['temp'] }}°C</p>
+            <!-- Add more weather details as needed -->
+        </div>
+        <div class="detail">
+            <h2>Other Details</h2>
+            <p>Pressure: {{ data['main']['pressure'] }} hPa</p>
+            <p>Humidity: {{ data['main']['humidity'] }}%</p>
+            <!-- Add more details as needed -->
+        </div>
+        <!-- Add more sections for additional details if necessary -->
+    </div>
+</body>
+</html>
