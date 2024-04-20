@@ -1,0 +1,6 @@
+# when we are deploying our project over cloud then we have to set this file and,,add inside required feactures
+
+
+Flask
+gunicorn
+requests
