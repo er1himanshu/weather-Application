@@ -17,10 +17,13 @@ def get_data():
             'units': request.form.get("units")
         }
         response = requests.get(url, params=params)
+        
         data = response.json()
-        return render_template("weather_result.html", data=data)
+        city = data['name']
+        return render_template("weather_result.html", data=data , city = city)
     else:
-        return render_template("index.html")
+        return render_template("index.html") 
+        
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5002)
